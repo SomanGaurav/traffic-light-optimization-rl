@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Simulation outputs
+tripinfo.xml
+*.out
+
+# Training artifacts (commit selected results deliberately)
+models/
+plots/

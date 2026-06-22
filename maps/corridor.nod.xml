@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Two-junction signalized corridor: a pair of 4-way intersections
+     ~200 m apart on a shared east-west arterial. -->
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <!-- signalized intersections -->
+    <node id="J0" x="0"   y="0" type="traffic_light"/>
+    <node id="J1" x="200" y="0" type="traffic_light"/>
+
+    <!-- arterial ends -->
+    <node id="W" x="-200" y="0" type="priority"/>
+    <node id="E" x="400"  y="0" type="priority"/>
+
+    <!-- cross-street ends -->
+    <node id="J0N" x="0"   y="200"  type="priority"/>
+    <node id="J0S" x="0"   y="-200" type="priority"/>
+    <node id="J1N" x="200" y="200"  type="priority"/>
+    <node id="J1S" x="200" y="-200" type="priority"/>
+</nodes>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 3 lanes per direction, 50 km/h (13.89 m/s) on every approach. -->
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- east-west arterial -->
+    <edge id="W_J0"  from="W"  to="J0" numLanes="3" speed="13.89"/>
+    <edge id="J0_W"  from="J0" to="W"  numLanes="3" speed="13.89"/>
+    <edge id="J0_J1" from="J0" to="J1" numLanes="3" speed="13.89"/>
+    <edge id="J1_J0" from="J1" to="J0" numLanes="3" speed="13.89"/>
+    <edge id="J1_E"  from="J1" to="E"  numLanes="3" speed="13.89"/>
+    <edge id="E_J1"  from="E"  to="J1" numLanes="3" speed="13.89"/>
+
+    <!-- cross street at J0 -->
+    <edge id="J0N_J0" from="J0N" to="J0"  numLanes="3" speed="13.89"/>
+    <edge id="J0_J0N" from="J0"  to="J0N" numLanes="3" speed="13.89"/>
+    <edge id="J0S_J0" from="J0S" to="J0"  numLanes="3" speed="13.89"/>
+    <edge id="J0_J0S" from="J0"  to="J0S" numLanes="3" speed="13.89"/>
+
+    <!-- cross street at J1 -->
+    <edge id="J1N_J1" from="J1N" to="J1"  numLanes="3" speed="13.89"/>
+    <edge id="J1_J1N" from="J1"  to="J1N" numLanes="3" speed="13.89"/>
+    <edge id="J1S_J1" from="J1S" to="J1"  numLanes="3" speed="13.89"/>
+    <edge id="J1_J1S" from="J1"  to="J1S" numLanes="3" speed="13.89"/>
+</edges>
