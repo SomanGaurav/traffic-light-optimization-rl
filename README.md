@@ -134,30 +134,3 @@ python train.py --config maps/corridor.sumocfg --model corridor --epochs 50 --st
 python evaluate.py --config maps/corridor.sumocfg --model corridor --steps 500
 ```
 
-### Note on demand calibration
-
-The corridor scenario initially showed *no* learning — a flat training curve and
-a result far worse than the baseline. The cause was traffic demand, not the
-agent: at one vehicle every 0.7 s the two junctions could not discharge what
-was being inserted, so vehicles accumulated indefinitely (168 queued, zero
-completed trips) and total waiting time was dominated by gridlock rather than
-by signal policy. With demand rescaled to one vehicle every 2 s — congested
-enough to matter (40 vehicles queued at peak) but still clearing 210 trips per
-episode — the agent learns normally, cutting episode waiting time from ~630K to
-~155K. Signal control can only help a network that is under capacity; past
-saturation, no policy recovers it.
-
-## Acknowledgments
-
-This project is a ground-up rebuild of
-[RekhaChittaloori/traffic-optimization-rl](https://github.com/RekhaChittaloori/traffic-optimization-rl),
-which provided the original concept and the SUMO city networks in `maps/`.
-The RL implementation here is rewritten: the original trained without
-exploration (ε started at 0), replayed the full buffer in order instead of
-sampling minibatches, never used its target network, and skipped the yellow
-phase; this version fixes all of that and adds seeding, a fixed-time baseline,
-and a reproducible evaluation harness.
-
-## Author
-
-**Soman Gaurav** — [GitHub](https://github.com/SomanGaurav)
